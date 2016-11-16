@@ -13,6 +13,7 @@
 		14A0D9CB1DDCF50700D3694A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A0D9C91DDCF50700D3694A /* Main.storyboard */; };
 		14A0D9CD1DDCF50700D3694A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14A0D9CC1DDCF50700D3694A /* Assets.xcassets */; };
 		14A0D9D01DDCF50700D3694A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A0D9CE1DDCF50700D3694A /* LaunchScreen.storyboard */; };
+		14A0D9D91DDCF71100D3694A /* ImageCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A0D9D81DDCF71100D3694A /* ImageCollectionVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		14A0D9CC1DDCF50700D3694A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14A0D9CF1DDCF50700D3694A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14A0D9D11DDCF50700D3694A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14A0D9D71DDCF71100D3694A /* ImageCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionVC.h; sourceTree = "<group>"; };
+		14A0D9D81DDCF71100D3694A /* ImageCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +61,10 @@
 		14A0D9BF1DDCF50700D3694A /* InstaKilo */ = {
 			isa = PBXGroup;
 			children = (
-				14A0D9C31DDCF50700D3694A /* AppDelegate.h */,
-				14A0D9C41DDCF50700D3694A /* AppDelegate.m */,
-				14A0D9C61DDCF50700D3694A /* ViewController.h */,
-				14A0D9C71DDCF50700D3694A /* ViewController.m */,
-				14A0D9C91DDCF50700D3694A /* Main.storyboard */,
+				14A0D9DC1DDCF75400D3694A /* Controllers */,
+				14A0D9DB1DDCF73900D3694A /* Models */,
+				14A0D9DA1DDCF72500D3694A /* UI */,
 				14A0D9CC1DDCF50700D3694A /* Assets.xcassets */,
-				14A0D9CE1DDCF50700D3694A /* LaunchScreen.storyboard */,
 				14A0D9D11DDCF50700D3694A /* Info.plist */,
 				14A0D9C01DDCF50700D3694A /* Supporting Files */,
 			);
@@ -77,6 +77,35 @@
 				14A0D9C11DDCF50700D3694A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14A0D9DA1DDCF72500D3694A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				14A0D9C91DDCF50700D3694A /* Main.storyboard */,
+				14A0D9CE1DDCF50700D3694A /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		14A0D9DB1DDCF73900D3694A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14A0D9C31DDCF50700D3694A /* AppDelegate.h */,
+				14A0D9C41DDCF50700D3694A /* AppDelegate.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		14A0D9DC1DDCF75400D3694A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				14A0D9C61DDCF50700D3694A /* ViewController.h */,
+				14A0D9C71DDCF50700D3694A /* ViewController.m */,
+				14A0D9D71DDCF71100D3694A /* ImageCollectionVC.h */,
+				14A0D9D81DDCF71100D3694A /* ImageCollectionVC.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +181,7 @@
 			files = (
 				14A0D9C81DDCF50700D3694A /* ViewController.m in Sources */,
 				14A0D9C51DDCF50700D3694A /* AppDelegate.m in Sources */,
+				14A0D9D91DDCF71100D3694A /* ImageCollectionVC.m in Sources */,
 				14A0D9C21DDCF50700D3694A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
