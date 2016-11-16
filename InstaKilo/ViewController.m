@@ -76,10 +76,12 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
     
+    NSArray *listOfKeys = self.dictOfImages.allKeys;
+    NSString *section = listOfKeys[indexPath.section];
+    NSArray *arrayOfImages = [self.dictOfImages objectForKey:section];
+    UIImage *imageToDisplay = arrayOfImages[indexPath.row];
     
-    
-    
-    
+    cell.imageViewForCell.image = imageToDisplay;
     
     return cell;
 }
