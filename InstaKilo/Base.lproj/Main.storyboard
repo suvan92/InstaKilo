@@ -37,7 +37,21 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T9M-6b-vdh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="T9M-6b-vdh" firstAttribute="leading" secondItem="3Yw-T8-oIA" secondAttribute="leading" id="28j-Vq-1iC"/>
+                                            <constraint firstItem="T9M-6b-vdh" firstAttribute="top" secondItem="3Yw-T8-oIA" secondAttribute="top" id="Ei3-CJ-UjG"/>
+                                            <constraint firstAttribute="trailing" secondItem="T9M-6b-vdh" secondAttribute="trailing" id="MRl-bt-KR2"/>
+                                            <constraint firstAttribute="bottom" secondItem="T9M-6b-vdh" secondAttribute="bottom" id="MYC-rT-jhf"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageViewForCell" destination="T9M-6b-vdh" id="MnC-bg-9ew"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerView" id="w6l-yY-4wB" customClass="HeaderReusableView">

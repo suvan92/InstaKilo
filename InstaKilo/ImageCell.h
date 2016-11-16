@@ -10,6 +10,7 @@
 
 @interface ImageCell : UICollectionViewCell
 
-@property (nonatomic) UIImageView *imageViewForCell;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewForCell;
+
 
 @end

@@ -72,7 +72,7 @@
         } else if ([key isEqualToString:@"Food"]) {
             return ((NSArray *)[self.dictOfImages objectForKey:key]).count;
         } else {
-            return ((NSArray *)[self.dictOfImages objectForKey:key]).count;
+            return 1;
         }
     }
     return 0;
