@@ -61,9 +61,9 @@
 		14A0D9BF1DDCF50700D3694A /* InstaKilo */ = {
 			isa = PBXGroup;
 			children = (
+				14A0D9DA1DDCF72500D3694A /* UI */,
 				14A0D9DC1DDCF75400D3694A /* Controllers */,
 				14A0D9DB1DDCF73900D3694A /* Models */,
-				14A0D9DA1DDCF72500D3694A /* UI */,
 				14A0D9CC1DDCF50700D3694A /* Assets.xcassets */,
 				14A0D9D11DDCF50700D3694A /* Info.plist */,
 				14A0D9C01DDCF50700D3694A /* Supporting Files */,

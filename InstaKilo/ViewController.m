@@ -7,10 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "ImageCell.h"
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic) NSArray *listOfImages;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) UICollectionViewFlowLayout *layout;
+@property (nonatomic) NSDictionary *dictOfImages;
 
 @end
 
@@ -19,25 +22,66 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setUpImageArray];
+    [self setUpImageDict];
     
 }
 
+#pragma mark - Set Up -
 
--(void)setUpImageArray {
+-(void)setUpImageDict {
     
-    self.listOfImages = @[[UIImage imageNamed:@"DeepProfile"],
-                          [UIImage imageNamed:@"IMG_0902"],
-                          [UIImage imageNamed:@"IMG_1313"],
-                          [UIImage imageNamed:@"IMG_1709"],
-                          [UIImage imageNamed:@"IMG_1747"],
-                          [UIImage imageNamed:@"IMG_1751"],
-                          [UIImage imageNamed:@"IMG_1752"],
-                          [UIImage imageNamed:@"IMG_1806"]];
+    NSArray *peopleArray = @[[UIImage imageNamed:@"DeepProfile"],
+                             [UIImage imageNamed:@"IMG_0902"],
+                             [UIImage imageNamed:@"IMG_1313"]];
     
+    NSArray *foodArray = @[[UIImage imageNamed:@"IMG_1709"],
+                           [UIImage imageNamed:@"IMG_1747"],
+                           [UIImage imageNamed:@"IMG_1751"],
+                           [UIImage imageNamed:@"IMG_1752"]];
     
+    NSArray *scenesArray = @[[UIImage imageNamed:@"IMG_1806"]];
+    
+    self.dictOfImages = @{@"People" : peopleArray,
+                          @"Food" : foodArray,
+                          @"Scenes" : scenesArray};
     
 }
 
+#pragma mark - CollectionViewDelegate -
+
+
+
+#pragma mark - CollectionViewDataSource -
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.dictOfImages.allKeys.count;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    
+    NSArray *listOfKeys = self.dictOfImages.allKeys;
+    
+    for (NSString *key in listOfKeys) {
+        if ([key isEqualToString:@"People"]) {
+            return ((NSArray *)[self.dictOfImages objectForKey:key]).count;
+        } else if ([key isEqualToString:@"Food"]) {
+            return ((NSArray *)[self.dictOfImages objectForKey:key]).count;
+        } else {
+            return ((NSArray *)[self.dictOfImages objectForKey:key]).count;
+        }
+    }
+    return 0;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    ImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell" forIndexPath:indexPath];
+    
+    
+    
+    
+    
+    
+    return cell;
+}
 
 @end
