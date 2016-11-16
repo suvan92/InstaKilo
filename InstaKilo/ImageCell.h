@@ -10,6 +10,6 @@
 
 @interface ImageCell : UICollectionViewCell
 
-@property (nonatomic) UIImage *image;
+@property (nonatomic) UIImageView *imageViewForCell;
 
 @end

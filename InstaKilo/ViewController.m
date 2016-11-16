@@ -19,14 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.listOfImages = [NSArray array];
+    [self setUpImageArray];
     
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)setUpImageArray {
+    
+    self.listOfImages = @[[UIImage imageNamed:@"DeepProfile"],
+                          [UIImage imageNamed:@"IMG_0902"],
+                          [UIImage imageNamed:@"IMG_1313"],
+                          [UIImage imageNamed:@"IMG_1709"],
+                          [UIImage imageNamed:@"IMG_1747"],
+                          [UIImage imageNamed:@"IMG_1751"],
+                          [UIImage imageNamed:@"IMG_1752"],
+                          [UIImage imageNamed:@"IMG_1806"]];
+    
+    
+    
 }
 
 
