@@ -24,6 +24,15 @@
     
     [self setUpImageDict];
     
+    self.layout = [[UICollectionViewFlowLayout alloc] init];
+    self.layout.itemSize = CGSizeMake(200, 200);
+    self.layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.layout.minimumInteritemSpacing = 15;
+    self.layout.minimumLineSpacing = 10;
+    self.layout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 50);
+    
+    self.collectionView.collectionViewLayout = self.layout;
+    
 }
 
 #pragma mark - Set Up -
@@ -47,11 +56,7 @@
     
 }
 
-#pragma mark - CollectionViewDelegate -
-
-
-
-#pragma mark - CollectionViewDataSource -
+#pragma mark - CollectionView -
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.dictOfImages.allKeys.count;
