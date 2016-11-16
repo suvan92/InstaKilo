@@ -70,6 +70,9 @@
                                         <constraint firstItem="jep-Sh-YOb" firstAttribute="centerX" secondItem="w6l-yY-4wB" secondAttribute="centerX" id="ZVg-1V-6R6"/>
                                         <constraint firstItem="jep-Sh-YOb" firstAttribute="centerY" secondItem="w6l-yY-4wB" secondAttribute="centerY" id="aoj-CB-GzE"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="sectionTitleLabel" destination="jep-Sh-YOb" id="czo-4Y-wpw"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="TMi-VQ-vea"/>

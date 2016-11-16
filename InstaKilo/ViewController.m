@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HeaderReusableView.h"
 #import "ImageCell.h"
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -32,7 +33,7 @@
     self.layout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 50);
     
     self.collectionView.collectionViewLayout = self.layout;
-    
+    self.collectionView.backgroundColor = [UIColor lightGrayColor];
 }
 
 #pragma mark - Set Up -
@@ -90,5 +91,18 @@
     
     return cell;
 }
+
+
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    HeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView" forIndexPath:indexPath];
+    
+    NSArray *arrayOfKeys = self.dictOfImages.allKeys;
+    
+    headerView.sectionTitleLabel.text = arrayOfKeys[indexPath.section];
+    return headerView;
+    
+}
+
 
 @end
