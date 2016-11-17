@@ -82,6 +82,7 @@
     UIImage *imageToDisplay = arrayOfImages[indexPath.row];
     
     cell.imageViewForCell.image = imageToDisplay;
+    cell.imageViewForCell.contentMode = UIViewContentModeScaleAspectFit;
     
     return cell;
 }
