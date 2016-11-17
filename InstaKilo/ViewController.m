@@ -30,7 +30,7 @@
     self.layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     self.layout.minimumInteritemSpacing = 15;
     self.layout.minimumLineSpacing = 10;
-    self.layout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 50);
+    self.layout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 40);
     
     self.collectionView.collectionViewLayout = self.layout;
     self.collectionView.backgroundColor = [UIColor lightGrayColor];
@@ -67,16 +67,9 @@
     
     NSArray *listOfKeys = self.dictOfImages.allKeys;
     
-    for (NSString *key in listOfKeys) {
-        if ([key isEqualToString:@"People"]) {
-            return ((NSArray *)[self.dictOfImages objectForKey:key]).count;
-        } else if ([key isEqualToString:@"Food"]) {
-            return ((NSArray *)[self.dictOfImages objectForKey:key]).count;
-        } else {
-            return 1;
-        }
-    }
-    return 0;
+    NSString *currentSection = listOfKeys[section];
+    
+    return ((NSArray *)[self.dictOfImages objectForKey:currentSection]).count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -85,7 +78,14 @@
     NSArray *listOfKeys = self.dictOfImages.allKeys;
     NSString *section = listOfKeys[indexPath.section];
     NSArray *arrayOfImages = [self.dictOfImages objectForKey:section];
-    UIImage *imageToDisplay = arrayOfImages[indexPath.row];
+    
+    UIImage *imageToDisplay;
+    
+    if (arrayOfImages.count == 1) {
+        imageToDisplay = arrayOfImages[0];
+    } else {
+        imageToDisplay = arrayOfImages[indexPath.row];
+    }
     
     cell.imageViewForCell.image = imageToDisplay;
     
