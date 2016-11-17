@@ -127,7 +127,6 @@
     
     headerView.sectionTitleLabel.text = arrayOfKeys[indexPath.section];
     return headerView;
-    
 }
 
 
