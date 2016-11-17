@@ -79,13 +79,7 @@
     NSString *section = listOfKeys[indexPath.section];
     NSArray *arrayOfImages = [self.dictOfImages objectForKey:section];
     
-    UIImage *imageToDisplay;
-    
-    if (arrayOfImages.count == 1) {
-        imageToDisplay = arrayOfImages[0];
-    } else {
-        imageToDisplay = arrayOfImages[indexPath.row];
-    }
+    UIImage *imageToDisplay = arrayOfImages[indexPath.row];
     
     cell.imageViewForCell.image = imageToDisplay;
     
