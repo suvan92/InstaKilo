@@ -55,6 +55,39 @@
     
 }
 
+#pragma mark - Layouts -
+
+-(void)setUpLayouts {
+    self.groupLayout = [[UICollectionViewFlowLayout alloc] init];
+    self.groupLayout.itemSize = CGSizeMake(200, 200);
+    self.groupLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.groupLayout.minimumInteritemSpacing = 15;
+    self.groupLayout.minimumLineSpacing = 10;
+    self.groupLayout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 40);
+    
+    
+    self.freeLayout = [[UICollectionViewFlowLayout alloc] init];
+    self.freeLayout.itemSize = CGSizeMake(100, 100);
+    self.freeLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    self.freeLayout.minimumLineSpacing = 5;
+    self.freeLayout.minimumLineSpacing = 5;
+}
+
+
+- (IBAction)switchLayoutType:(UISegmentedControl *)sender {
+    
+    if (sender.selectedSegmentIndex == 0) {
+        [self.collectionView.collectionViewLayout invalidateLayout];
+        [self.collectionView setCollectionViewLayout:self.groupLayout animated:YES];
+    } else if (sender.selectedSegmentIndex == 1) {
+        [self.collectionView.collectionViewLayout invalidateLayout];
+        [self.collectionView setCollectionViewLayout:self.freeLayout animated:YES];
+    }
+    
+}
+
+
+
 #pragma mark - CollectionView -
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -95,24 +128,6 @@
     headerView.sectionTitleLabel.text = arrayOfKeys[indexPath.section];
     return headerView;
     
-}
-
-#pragma mark - Layout Setup -
-
--(void)setUpLayouts {
-    self.groupLayout = [[UICollectionViewFlowLayout alloc] init];
-    self.groupLayout.itemSize = CGSizeMake(200, 200);
-    self.groupLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    self.groupLayout.minimumInteritemSpacing = 15;
-    self.groupLayout.minimumLineSpacing = 10;
-    self.groupLayout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 40);
-    
-    
-    self.freeLayout = [[UICollectionViewFlowLayout alloc] init];
-    self.freeLayout.itemSize = CGSizeMake(70, 70);
-    self.freeLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
-    self.freeLayout.minimumLineSpacing = 5;
-    self.freeLayout.minimumLineSpacing = 5;
 }
 
 
