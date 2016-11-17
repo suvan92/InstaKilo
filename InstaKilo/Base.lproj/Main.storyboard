@@ -88,7 +88,17 @@
                             <constraint firstAttribute="trailing" secondItem="row-gx-i3S" secondAttribute="trailing" id="heZ-4C-sMq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yqi-9W-474"/>
+                    <navigationItem key="navigationItem" id="yqi-9W-474">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="YSb-vj-vbB">
+                            <rect key="frame" x="113" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Groups"/>
+                                <segment title="All"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="row-gx-i3S" id="IXc-SY-W62"/>
                     </connections>

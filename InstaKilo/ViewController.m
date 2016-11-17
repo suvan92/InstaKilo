@@ -13,7 +13,9 @@
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic) UICollectionViewFlowLayout *layout;
+@property (nonatomic) UICollectionViewFlowLayout *groupLayout;
+@property (nonatomic) UICollectionViewFlowLayout *freeLayout;
+
 @property (nonatomic) NSDictionary *dictOfImages;
 
 @end
@@ -23,17 +25,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setUpImageDict];
-    
-    self.layout = [[UICollectionViewFlowLayout alloc] init];
-    self.layout.itemSize = CGSizeMake(200, 200);
-    self.layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-    self.layout.minimumInteritemSpacing = 15;
-    self.layout.minimumLineSpacing = 10;
-    self.layout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 40);
-    
-    self.collectionView.collectionViewLayout = self.layout;
     self.collectionView.backgroundColor = [UIColor lightGrayColor];
+    
+    [self setUpImageDict];
+    [self setUpLayouts];
+    
+    self.collectionView.collectionViewLayout = self.groupLayout;
+    
 }
 
 #pragma mark - Set Up -
@@ -97,6 +95,24 @@
     headerView.sectionTitleLabel.text = arrayOfKeys[indexPath.section];
     return headerView;
     
+}
+
+#pragma mark - Layout Setup -
+
+-(void)setUpLayouts {
+    self.groupLayout = [[UICollectionViewFlowLayout alloc] init];
+    self.groupLayout.itemSize = CGSizeMake(200, 200);
+    self.groupLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.groupLayout.minimumInteritemSpacing = 15;
+    self.groupLayout.minimumLineSpacing = 10;
+    self.groupLayout.headerReferenceSize = CGSizeMake(self.collectionView.frame.size.width, 40);
+    
+    
+    self.freeLayout = [[UICollectionViewFlowLayout alloc] init];
+    self.freeLayout.itemSize = CGSizeMake(70, 70);
+    self.freeLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    self.freeLayout.minimumLineSpacing = 5;
+    self.freeLayout.minimumLineSpacing = 5;
 }
 
 
